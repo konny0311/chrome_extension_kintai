@@ -9,6 +9,9 @@
         },
         "default_popup": "board.html"
     },
+	"background": {
+		"service_worker": "background.js"
+	},
     "icons": {
         "32": "/images/chart_icon_32.png"
     },
