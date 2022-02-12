@@ -59,12 +59,19 @@ function insertInfo(info) {
         let newRow = tbody.insertRow(0);
         var newCell = newRow.insertCell(0);
         // Hours
-        var newText = document.createTextNode(info[i].value);
-        newCell.appendChild(newText);
+        var hours = info[i].value;
+        var hourText = document.createTextNode(hours);
+        newCell.appendChild(hourText);
         var newCell = newRow.insertCell(0);
         // Name
-        var newText = document.createTextNode(info[i].key);
-        newCell.appendChild(newText);
+        var nameText = document.createTextNode(info[i].key);
+        newCell.appendChild(nameText);
+        if (hours >=8) {
+            newRow.style.color = "green";
+        }
+        if (hours >= 9) {
+            newRow.style.color = "red";
+        }            
     };
 }
 
