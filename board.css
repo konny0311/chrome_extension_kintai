@@ -5,12 +5,16 @@
     margin: 10px;
     border: none;
     border-radius: 2px;
-  }
+}
   
-  board.current {
-    box-shadow: 0 0 0 2px white,
-                0 0 0 4px black;
-  }
+board.current {
+  box-shadow: 0 0 0 2px white,
+              0 0 0 4px black;
+}
+
+table {
+  margin: auto;
+}
 
 table,
 td {
