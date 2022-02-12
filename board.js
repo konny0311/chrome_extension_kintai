@@ -1,17 +1,5 @@
 let debugButton = document.getElementById("debugButton");
 
-debugButton.addEventListener("click", async () => {
-    let [tab] = await chrome.tabs.query({active:true, currentWindow: true});
-
-    // "scripting" permission required in manifest.json
-    var ret = chrome.scripting.executeScript({
-        target: {tabId: tab.id},
-        function: getInfo
-    });
-    ret.then(val => {insertInfo(val[0]["result"])})
-          .catch(err => {console.log(err)});
-});
-
 function getInfo() {
     // get members name
     let memberTable = document.getElementsByClassName("attendance-table-contents")[1];
@@ -75,4 +63,14 @@ function insertInfo(info) {
     };
 }
 
+document.addEventListener('DOMContentLoaded', async () => {
+    let [tab] = await chrome.tabs.query({active:true, currentWindow: true});
 
+    // "scripting" permission required in manifest.json
+    var ret = chrome.scripting.executeScript({
+        target: {tabId: tab.id},
+        function: getInfo
+    });
+    ret.then(val => {insertInfo(val[0]["result"])})
+          .catch(err => {console.log(err)});
+});
