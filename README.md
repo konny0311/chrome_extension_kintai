@@ -1,2 +1,2 @@
 # Extension for Kintai
-This extension creates a line chart using data of 勤怠項目別集計 for managers.
+This chrome extension shows working hours per day of members on 勤怠確認 page in クラウド勤怠.
